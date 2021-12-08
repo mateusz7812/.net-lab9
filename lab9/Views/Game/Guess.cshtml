@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Gra";
+}
+
+<main>
+    <section class='@(ViewBag.number == ViewBag.inputNumber ? "foundClass" : "missedClass")'>
+        @if(ViewBag.number == ViewBag.inputNumber){
+            <h3>@ViewBag.inputNumber jest poszukiwaną liczbą! Zgadłeś/aś za @ViewBag.tryNumber próbą.</h3>
+        } else if (ViewBag.number > ViewBag.inputNumber){
+            <h3>@ViewBag.inputNumber jest mniejsza od poszukiwanej liczby. [0, @ViewBag.maxNumber) (@ViewBag.tryNumber próba)</h3>
+        } else if (ViewBag.number < ViewBag.inputNumber){
+            <h3>@ViewBag.inputNumber jest większa od poszukiwanej liczby.  [0, @ViewBag.maxNumber) (@ViewBag.tryNumber próba)</h3>
+        } else {
+            <h3>Wystąpił problem z @ViewBag.inputNumber, poszukiwaną liczbą była @ViewBag.number</h3>
+        }
+    </section>
+    @if (ViewBag.number != ViewBag.inputNumber) {
+        <partial name="_GuessForm" />
+    }
+    <partial name="_DrawForm"/>
+    <partial name="_SetForm"/>
+</main>

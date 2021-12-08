@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Gra";
+}
+
+<main>
+    <section>
+        <h3>Wylosowano nową liczbę z przedziału [0 , @ViewBag.maxNumber)</h3>
+    </section>
+    <partial name="_GuessForm" />
+    <partial name="_SetForm" />
+    <partial name="_DrawForm" />
+</main>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <link rel="Stylesheet" href="~/css/main.css" />
+        <meta charset="UTF-8">
+        <meta name="author" content="Mateusz Niecikowski">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewData["Title"]</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        @RenderSection( "css", false)
+    </head>
+    <body>
+        <header id="page-header">
+            <h2>@ViewData["Title"]</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a asp-action="solve" asp-controller="tool">Kalkulator</a></li>
+                <li><a asp-action="draw" asp-controller="game">Gra</a></li>
+            </ul>
+        </nav>
+            @RenderBody()
+        <footer>
+            &reg; 2021 Mateusz Niecikowski
+        </footer>
+    </body>
+</html>

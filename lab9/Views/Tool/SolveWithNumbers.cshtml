@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Kalkulator";
+}
+<main>
+    <section class="@ViewBag.sectionClass">
+        <h3>Znaleziono @ViewBag.results rozwiązań dla @ViewBag.a x^2 + @ViewBag.b x + @ViewBag.c :</h1>
+        @if (ViewBag.x1 != null)
+        {
+            <p>x<sub>1</sub>=@ViewBag.x1</p>   
+        }
+        @if (ViewBag.x2 != null)
+        {
+            <p>x<sub>2</sub>=@ViewBag.x2</p>
+        }
+        @if (ViewBag.results == 0)
+        {
+            <p>Brak rozwiązań.</p>
+        }    
+    </section>
+    <partial name="_CalculatorForm"/>
+</main>

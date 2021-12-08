@@ -1,0 +1,9 @@
+<section>
+    <h3>Wpisz wartości funkcji kwadratowej poniżej</h3>
+    <form onsubmit="window.open('@Url.Action("Solve", "Tool")/' + document.getElementById('a').value +'/' + document.getElementById('b').value + '/' + document.getElementById('c').value, '_self'); return false;">
+        <input type="number" id="a" value="1" required/>
+        <input type="number" id="b" value="2" required/>
+        <input type="number" id="c" value="3" required/>
+        <input type="submit" value="Oblicz"/>
+    </form>
+</section>
